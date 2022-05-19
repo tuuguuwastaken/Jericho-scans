@@ -1,0 +1,40 @@
+{
+  "name": "timezone-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.6.0"
+  },
+  "scripts": {
+    "gh": "git push heroku master && npm run l",
+    "hup": "heroku dyno:scale worker=1",
+    "hdown": "heroku dyno:scale worker=0",
+    "l": "heroku logs --tail",
+    "logs": "heroku logs --tail",
+    "watch": "tsc -w",
+    "build": "tsc",
+    "dev": "nodemon ./dist/bot.js",
+    "start": "node --optimize_for_size --max_old_space_size=460 ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.9.1",
+    "axios": "^0.21.4",
+    "dayjs": "^1.10.6",
+    "discord.js-light": "^4.1.4",
+    "dotenv": "^10.0.0",
+    "firebase-admin": "^9.11.1",
+    "fuse.js": "^6.4.6",
+    "nodemon": "^2.0.12",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.0"
+  }
+}
