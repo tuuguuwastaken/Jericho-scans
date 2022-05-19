@@ -1,6 +1,6 @@
 const ytdl =  require("ytdl-core");
 const ytsearch = require('yt-search');
-
+const { Permissions } =require("discord.js");
 module.exports = {
     name: 'play',
     aliases: 'p',
@@ -8,12 +8,12 @@ module.exports = {
     async execute(client, message, args){
         const vc = message.member.voice.channel;
         if(!vc){
-            message.channel.send("chi neg channel ruu orooh yostoi");
+            message.channel.send("You have to join a channel");
         }
         const perm = vc.permissionsFor(message.client.user);
-        if(!perm.has('CONNECT')) return message.channel.send("Ndaa join hiih zuvshuurul alga");
-        if(!perm.has('SPEAK')) return message.channel.send("Ndaa join hiih zuvshuurul alga");
-        if(!args.length) return message.channel.send("yamr bichleg haihiig oruulnu");
+        if(!perm.has('CONNECT')) return message.channel.send("I dont have permission to join");
+        if(!perm.has('SPEAK')) return message.channel.send("I dont have premission to speak");
+        if(!args.length) return message.channel.send("Please enter a keyword");
 
         const validURL = (str) =>{
             var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
@@ -39,7 +39,7 @@ module.exports = {
             .on("finish", () => {
                 vc.leave();
             });
-            await message.reply(`Odoo "***${vid.title}***" iig togolj bn`);
+            await message.reply(`currently playing "***${vid.title}***"`);
             return;
         }
 
@@ -50,9 +50,9 @@ module.exports = {
             .on("finish", () => {
                 vc.leave();
             });
-            await message.reply(`Odoo "***${vid.title}***" iig togolj bn`);
+            await message.reply(`currently playing"***${vid.title}***" `);
         } else {
-            message.channel.send('Duug/bichleg olsongui');
+            message.channel.send("couldn't find the video/song ");
         }
     }
 }
