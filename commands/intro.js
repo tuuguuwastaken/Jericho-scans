@@ -8,14 +8,14 @@ module.exports = {
         message.channel.bulkDelete(1);
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#7122bf')
-        .setTitle("Tokyo lights server BOT")
-        .setDescription("Tokyo lights serveriin Discord bot")
+        .setTitle("Nobles Masquerade Bot")
+        .setDescription("This is a Nobles Masquerade bot")
         .addFields(
-            {name:'Hello', value:'Discord bot iin buh commanduud ig harmaar bvl ***;help*** geree'},
+            {name:'Hello', value:'For commands please enter ***;help***'},
             {name:"How you doing?", value:"Coded in nodejs"},
         )
         .setImage("https://i.imgur.com/1HNWisf.png")
-        .setFooter("Buteej/ codelson hun Tuuguu#6913");
+        .setFooter("written by yours truly members");
         message.channel.send(newEmbed);
     }
 }

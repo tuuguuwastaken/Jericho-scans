@@ -5,9 +5,9 @@ module.exports = {
     async execute(client, message, args){
         const vc = message.member.voice.channel;
         if(!vc){
-            message.channel.send("chi neg channel ruu orson baih yostoi");
+            message.channel.send("I have to be in a voice channel first");
         }
         await vc.leave();
-        await message.channel.send(" ZA zailla :smiling_face_with_tear:");
+        await message.channel.send(" Aite I'm leaving :smiling_face_with_tear:");
     }
 }

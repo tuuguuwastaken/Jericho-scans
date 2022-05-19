@@ -7,9 +7,9 @@ module.exports = {
             if(member){
                 const memberTarget = message.guild.members.cache.get(member.id);
                 memberTarget.ban();
-                message.channel.send("tar bagii'g tsaashn haruulav");
+                message.channel.send("banned that user");
             } else {
-                message.channel.send("ter bagii'g bandaj chdsangui");
+                message.channel.send("Couldn't ban that user");
             }
         }
     }
